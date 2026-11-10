@@ -1,0 +1,6 @@
+method: rthgan_manuscript
+display_name: RTH-GAN (manuscript implementation)
+available: true
+expected_channels: 1
+supervision: paired
+# Separate from the external/paper-result rthgan registry entry.

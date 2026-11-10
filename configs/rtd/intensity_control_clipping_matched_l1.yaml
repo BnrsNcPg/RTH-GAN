@@ -1,0 +1,41 @@
+# Proposed control protocol; results require new runs, not relabelled Table 9 values.
+mode: intensity_proxy
+physical_interpretation: false
+control: clipping_matched_l1
+weighting: uniform
+hcw:
+  k: 3
+  window_size: 5
+  protection_size: 3
+  minimum_weight: 0.2
+  power: 1.0
+  epsilon: 0.000001
+proxy_context:
+  mode: normalized_proxy
+  context_id: landset7_jpeg_intensity_v1
+  sensor_id: NOT_SENSOR_DERIVED
+  target_band: SINGLE_EFFECTIVE_AUXILIARY_BAND
+  wavelength_um: [1.0]
+  wavelength_range_um: null
+  spectral_response_source: dimensionless single-effective-band abstraction; not a measured response
+  tau: [0.8]
+  E_sun: [0.6]
+  E_sky: [0.2]
+  L_path: [0.1]
+  response_weight: [1.0]
+  delta_lambda: [1.0]
+  eps: 0.000001
+  parameter_semantics: dimensionless_fixed_auxiliary_model_coefficients
+  parameter_source: fixed coefficients from configs/rtd/normalized_proxy_audit_v1.yaml
+  generation_method: reused audited affine proxy; user authorized JPEG intensity training on 2026-11-02
+  physical_interpretation: false
+  provenance_file: null
+  physical_gate: null
+  units:
+    tau: dimensionless
+    E_sun: dimensionless
+    E_sky: dimensionless
+    L_path: dimensionless
+    response_weight: dimensionless
+    delta_lambda: dimensionless
+    output: dimensionless_radiance_related_score

@@ -1,0 +1,20 @@
+evaluation:
+  image_size: 256
+  metric_seed: 42
+  image_size: 256
+  metrics:
+    psnr: true
+    ssim: true
+    rmse: true
+    lpips: true
+    fid: true
+    kid: true
+    ms_ssim: false
+  lpips:
+    backbone: alex
+  fid:
+    feature: 2048
+  kid:
+    feature: 2048
+    subsets: 100
+    subset_size: 50

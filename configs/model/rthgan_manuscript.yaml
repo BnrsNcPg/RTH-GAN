@@ -1,0 +1,30 @@
+# Executable architectural choices. The manuscript does not specify these widths,
+# depths, mask count, or all optimizer/PINN hyperparameters.
+model:
+  name: rthgan_manuscript
+  discriminator_channels: 64
+  generator:
+    widths: [40, 80, 160, 320]
+    depths: [2, 2, 6, 2]
+    feature_channels: 64
+    masks: 4
+    attention_heads: 4
+    curvature: 1.0
+    tangent_bound: 0.5
+    pinn:
+      positional_frequencies: 4
+      hidden_channels: 32
+      hidden_layers: 3
+      l_max: 1.0
+      lambda_s: 0.001
+      beta: 0.5
+      epsilon_w: 0.0001
+      epsilon_r: 0.001
+      reflectance_max: 4.0
+      num_interior_points: 1024
+      num_boundary_points: 256
+      lambda_pde: 1.0
+      lambda_bc: 0.1
+      lambda_tv: 0.01
+      lambda_val: 1.0
+      formulation_mode: corrected

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rth-gan-v2"
+version = "0.1.0"
+description = "RTH-GAN core: PINN priors, Retinex-guided generation, and thermal consistency"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.1", "torchvision>=0.16", "numpy>=1.24", "pandas>=2.0",
+  "Pillow>=10.0", "scikit-image>=0.21", "scipy>=1.10", "PyYAML>=6.0",
+  "torchmetrics[image]>=1.3,<2.0"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+landsat = ["rasterio>=1.3"]
+
+[tool.setuptools.packages.find]
+include = ["data*", "models*", "metrics*", "rtd*"]
+
+[tool.setuptools]
+py-modules = ["experiment_utils", "manuscript_protocol", "manuscript_training", "train_rthgan", "infer_rthgan"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

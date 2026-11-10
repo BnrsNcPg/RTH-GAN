@@ -1,0 +1,13 @@
+# New, explicitly declared JPEG preparation protocol. Not historical evidence.
+patch_size: 256
+qa_pixel_reject_bits:
+  landsat5: 27
+  landsat7: 27
+  landsat8: 31
+# Engineering threshold, not an official USGS recommendation.
+maximum_st_uncertainty_kelvin: 2.0
+# Declared raw C2 L2 DN ranges; quantitative loader semantics are unchanged.
+sr_dn_valid_range: [1, 65455]
+st_dn_valid_range: [1, 65535]
+jpeg_quality: 100
+rgb_subsampling: 0

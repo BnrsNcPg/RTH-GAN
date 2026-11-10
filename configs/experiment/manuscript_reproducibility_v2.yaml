@@ -1,0 +1,23 @@
+# New prospective runs only. These definitions do not relabel historical tables.
+protocol: manuscript_reproducibility_v2
+variants:
+  visual_only:
+    model_variant: rgg
+    rpa_variant: full
+    control: visual_only
+    stage_i_objective: l1
+  uniform:
+    model_variant: rgg
+    rpa_variant: full
+    control: uniform
+    stage_i_objective: l1+uniform_proxy
+  full:
+    model_variant: rgg
+    rpa_variant: full
+    control: hcw
+    stage_i_objective: l1+hcw
+  without_rpa:
+    model_variant: rgg
+    rpa_variant: plain_skip
+    control: hcw
+    stage_i_objective: l1+hcw

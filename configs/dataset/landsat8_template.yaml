@@ -1,0 +1,3 @@
+dataset:
+  manifest: datasets/manifests/landsat8.csv
+  normalization: datasets/manifests/landsat8_normalization.json

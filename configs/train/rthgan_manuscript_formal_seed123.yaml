@@ -1,0 +1,19 @@
+# Protocol v1: identical to seed42 except experiment name and random seed.
+experiment_name: rthgan_landsat8_protocol_v1_seed123
+seed: 123
+device: cuda:0
+training:
+  pinn_epochs: 50
+  warmup_epochs: 20
+  adversarial_epochs: 180
+  batch_size: 1
+  num_workers: 0
+  max_batches: null
+  learning_rate_pinn: 0.001
+  learning_rate_g: 0.0002
+  learning_rate_d: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  lambda_l1: 100.0
+  lambda_hac: 1.0
+  discriminator_steps: 1

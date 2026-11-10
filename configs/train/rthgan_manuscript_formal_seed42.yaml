@@ -1,0 +1,21 @@
+# Protocol v1: prospective engineering choices, not recovered paper settings.
+# Pair with configs/model/rthgan_manuscript.yaml; see the formal protocol.
+experiment_name: rthgan_landsat8_protocol_v1_seed42
+seed: 42
+device: cuda:0
+training:
+  pinn_epochs: 50
+  warmup_epochs: 20
+  adversarial_epochs: 180
+  batch_size: 1
+  num_workers: 0
+  max_batches: null  # full training subset every epoch
+  # Constant learning rates; the trainer has no scheduler.
+  learning_rate_pinn: 0.001
+  learning_rate_g: 0.0002
+  learning_rate_d: 0.0002
+  beta1: 0.5  # G/D only; PINN Adam uses (0.9, 0.999).
+  beta2: 0.999
+  lambda_l1: 100.0  # lambda_1
+  lambda_hac: 1.0   # lambda_2, radiance-domain HAC
+  discriminator_steps: 1

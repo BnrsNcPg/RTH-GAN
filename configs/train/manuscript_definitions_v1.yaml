@@ -1,0 +1,20 @@
+# Prospective JPEG protocol; results must come from new runs.
+seed: 42
+device: auto
+training:
+  pinn_epochs: 50
+  warmup_epochs: 20
+  adversarial_epochs: 180
+  batch_size: 1
+  num_workers: 0
+  cpu_threads: 2
+  max_batches: null
+  log_every_batches: 10
+  learning_rate_pinn: 0.001
+  learning_rate_g: 0.0002
+  learning_rate_d: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  lambda_l1: 100.0
+  lambda_hac: 1.0
+  discriminator_steps: 1

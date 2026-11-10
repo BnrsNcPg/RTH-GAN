@@ -1,0 +1,21 @@
+# Manuscript thermal RTD contract. Fill from training data and sensor metadata.
+# This deliberately contains no invented measured context or temperature bounds.
+sensor: null  # landsat5, landsat7, or landsat8; must match data/statistics
+normalization:
+  minimum_kelvin: null
+  maximum_kelvin: null
+  source_split: train
+sensor_response:
+  wavelength_um: []
+  response: []
+weighting: hcw  # uniform selects the frozen auxiliary consistency control
+hcw:
+  k: 3
+  window_size: 5
+  protection_size: 3
+  minimum_weight: 0.2
+  power: 1.0
+  epsilon: 0.000001
+# Paired context is supplied separately, after matching spatial augmentation.
+# Keys: emissivity, transmittance, downwelling_radiance, upwelling_radiance.
+# Radiance units: W m^-2 sr^-1 um^-1; wavelength units: um; temperature: K.

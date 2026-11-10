@@ -1,0 +1,35 @@
+# Every entry resolves to a distinct architecture/loss identity in results.
+# Stage lengths are shared, except N has no PINN pretraining.
+protocol: manuscript_definitions_v1
+variants:
+  n:
+    model_variant: n
+    control: visual_only
+    pinn_epochs: 0
+  n_pinn:
+    model_variant: n_pinn
+    control: visual_only
+  rgg_visual:
+    model_variant: rgg
+    control: visual_only
+  full:
+    model_variant: rgg
+    control: hcw
+  clipping_matched_l1:
+    model_variant: rgg
+    control: clipping_matched_l1
+  uniform:
+    model_variant: rgg
+    control: uniform
+  without_taff:
+    model_variant: rgg
+    fusion_variant: mean
+    control: hcw
+  local_only:
+    model_variant: rgg
+    fusion_variant: local_only
+    control: hcw
+  fixed_mean:
+    model_variant: rgg
+    fusion_variant: fixed_mean
+    control: hcw

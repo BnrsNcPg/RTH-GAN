@@ -1,0 +1,5 @@
+# Explicit data-selection choices, not hyperparameters reported in the paper.
+# QA_PIXEL masks: 27 rejects fill/dilated cloud/cloud/shadow for Landsat-5/7;
+# 31 additionally rejects high-confidence cirrus for Landsat-8.
+qa_pixel_reject_bits: null
+maximum_st_uncertainty_kelvin: null

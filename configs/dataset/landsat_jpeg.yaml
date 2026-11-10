@@ -1,0 +1,6 @@
+# Point this to the output of scripts/prepare_landsat_jpeg.py.
+# Dataset name identifies the actual sensor/collection, never an inferred alias.
+dataset:
+  name: landsat8_jpeg_v1
+  input_mode: jpeg_intensity
+  manifest: datasets/derived/landsat8_jpeg_v1/manifest.csv
